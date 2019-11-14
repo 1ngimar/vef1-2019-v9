@@ -1,0 +1,14 @@
+
+fetch('${API_URL}${value}')
+  .then((res) => {
+    if (!res.ok) {
+      console.log('Villa við að fetcha. NON 200 STATUS');
+      return;
+    }
+    console.log(res);
+    return res.json();
+  })
+  .then((data) => showData(data.results))
+  .catch((error) => {
+    console.log('Error!', error);
+  });
